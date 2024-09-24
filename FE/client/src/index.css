@@ -1,0 +1,72 @@
+/* input[type='text'], input[type='number'], select {
+  width: calc(100% - 22px); 
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 5px 0;
+  box-sizing: border-box; 
+}
+
+button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background-color: darkorchid; 
+}
+
+.btn-success {
+  background-color: rgb(30, 211, 166); 
+}
+
+.btn-show {
+  background-color: #2ac9e5; 
+}
+
+.btn-search {
+  background-color: #ddaa13; 
+}
+
+.btn-update {
+  background-color: #28a745; 
+}
+
+.btn-delete {
+  background-color: #dc3545; 
+}
+
+.btn-group {
+  margin: 20px 120px; 
+  text-align: center; 
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #1786ab;
+  color: #fff;
+}
+
+td {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+} */
