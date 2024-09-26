@@ -1,30 +1,24 @@
 import React from "react";
-import CustomerReg from "./CustomerReg";
-import CustomerLogin from "./CustomerLogin";
-import {Link,Route,Routes} from "react-router-dom";
-// import custpic from "../custpic.jpeg";
+import { Link } from "react-router-dom";
 import "../index.css";
 
-function CustomerMain(){
-    return(
+function CustomerMain() {
+    return (
         <div>
             <center>
-                {/* <img src={custpic}  height={200} width={800}/> */}
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/customermain/customerlogin">Login</Link>
+                            <Link to="customerlogin">Login</Link>
                         </li>
                         <li>
-                            <Link to="/customermain/customerreg">Register</Link>
+                            <Link to="customerreg">Register</Link>
                         </li>
                     </ul>
                 </nav>
-                <Routes>
-                <Route path="/customerlogin" element={<CustomerLogin/>}></Route>
-                <Route path="/customerreg" element={<CustomerReg/>}></Route>
-                </Routes>
             </center>
         </div>
     );
-}export default CustomerMain;
+}
+
+export default CustomerMain;
