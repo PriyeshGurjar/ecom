@@ -15,6 +15,7 @@ const venderRoute = require('./vender/vender.route.js');
 const billRoute = require('./admin/bill/bill.route.js');
 // const paymentdetails=require("./admin/billpayment/paymentdetails.route.js");
 const paymentDetailsRoute = require('./admin/billpayment/billpayment.route.js');
+const adminRoute = require('./admin/admin.route.js');
 
 app.use(cors());
 app.use(bodyParser.urlencoded ({extended:true}));
@@ -28,7 +29,7 @@ app.use("/payment",payment);
 app.use("/vender",venderRoute);
 app.use("/bill",billRoute);
 app.use("/paymentdetails",paymentDetailsRoute);
-
+app.use('/admin', adminRoute);
 
 mongoose.connect(config.URL,
 { useNewUrlParser:true }).then(

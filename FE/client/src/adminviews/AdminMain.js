@@ -1,71 +1,47 @@
-import React from "react";
-import { Link,Outlet, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
 import AdminLogin from "./AdminLogin";
 import AdminReg from "./AdminReg";
-import mainpic from "../adminpic.jpg"
+import mainpic from "../adminpic.jpg";
 import "../index.css";
 
-function AdminMain()
-{
-    return(
+function AdminMain() {
+    const [showLogin, setShowLogin] = useState(true); // Default to showing the login form
+
+    // Function to show the login form
+    const handleShowLogin = () => {
+        setShowLogin(true);
+    };
+
+    // Function to show the registration form
+    const handleShowReg = () => {
+        setShowLogin(false);
+    };
+
+    return (
         <div>
             <center>
-            <img src={mainpic} height={350} width={1000}/>
+                {/* Display the main image */}
+                <img src={mainpic} height={350} width={1000} alt="Admin Main"/>
+                
+                <h4>Admin Access</h4>
+                
+                {/* Buttons to toggle between Login and Registration */}
                 <nav>
-                    <ul>
-                        <li>
-                            <Link to="/adminmain/adminlogin">Login</Link>
-                        </li>
-                        <li>
-                            <Link to="/adminmain/adminreg">Registration</Link>
-                        </li>
-                    </ul>
-                    <Outlet/>
-                    <Routes>
-                        <Route path="/adminmain/adminlogin" element={<AdminLogin/>}></Route>
-                    </Routes>
+                    <button className="btn btn-primary" onClick={handleShowLogin}>
+                        Admin Login
+                    </button>
+                    <button className="btn btn-secondary" onClick={handleShowReg} style={{ marginLeft: "10px" }}>
+                        Admin Registration
+                    </button>
                 </nav>
-               </center>
+                
+                {/* Conditionally render AdminLogin or AdminReg based on the state */}
+                <div style={{ marginTop: "20px" }}>
+                    {showLogin ? <AdminLogin /> : <AdminReg />}
+                </div>
+            </center>
         </div>
     );
-} export default AdminMain;
+}
 
-// import React from "react";
-// import { Link,Route,Routes } from "react-router-dom";
-// // import adminpic from "./adminpic.jpg";
-// import AdminLogin from "./AdminLogin";
-// // import AdminReg from "./AdminReg";
-// import "../index.css";
-
-// // import StateMgt from "./StateMgt";
-// // import CityMgt from "./CityMgt";
-// // import ProductCatgMgt from "./ProductCatgMgt";
-// // import VenderMgt from "../venderviews/VenderMgt";
-// // import Product from "../productviews/Product";
-
-
-
-// function AdminMain(){
-//     return(
-//         <div>
-//         <center>
-//         {/* <img src={adminpic} height={200} width={800}/> */}
-//         <nav>
-//             <ul>
-//                 <li>
-//                     <Link to="/adminlogin" >Login</Link>
-//                 </li>
-//                 {/* <li>
-//                     <Link to="/adminreg">Registration</Link>
-//                 </li> */}
-//             </ul>
-           
-//         </nav>
-//         {/* <Routes>
-//                 <Route path="/statemgt" element={<StateMgt/>}></Route>
-//                 <Route path="/citymgt" element={<CityMgt/>}></Route>
-//             </Routes> */}
-//         </center>
-//     </div>
-//     );
-// } export default AdminMain;
+export default AdminMain;
